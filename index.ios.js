@@ -5,19 +5,21 @@ import React, {
   StyleSheet
 } from 'react-native'
 
+const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
 // Create a react Component
-var Weekdays = React.createClass({
-  render: function() {
+class Weekdays extends React.Component{
+  render() {
     return <View style={styles.container}>
       <Text>
         Days of the week:
       </Text>
     </View>
   }
-})
+}
 
 // Style the React Component
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1, // fill screen as much as possible, someting like width: 100%; height: 100%;
     // flexDirection: 'row', // swaps justifyContent to be width, alignItems to height
@@ -30,6 +32,4 @@ var styles = StyleSheet.create({
 })
 
 // Show the react Component on the screen
-AppRegistry.registerComponent('weekdays', function() {
-  return Weekdays
-})
+AppRegistry.registerComponent('weekdays', () => Weekdays)
