@@ -4,16 +4,21 @@ import React, {
   Text,
   StyleSheet
 } from 'react-native'
+import DayItem from './components/day-item'
 
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
 // Create a react Component
 class Weekdays extends React.Component{
+  days() {
+    return days.map( (day, key) => { return <DayItem key={key} day={day} /> } )
+  }
   render() {
     return <View style={styles.container}>
       <Text>
         Days of the week:
       </Text>
+      {this.days()}
     </View>
   }
 }
