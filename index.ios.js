@@ -1,53 +1,35 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, {
   AppRegistry,
-  Component,
-  StyleSheet,
+  View,
   Text,
-  View
-} from 'react-native';
+  StyleSheet
+} from 'react-native'
 
-class weekdays extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
-    );
+// Create a react Component
+var Weekdays = React.createClass({
+  render: function() {
+    return <View style={styles.container}>
+      <Text>
+        Days of the week:
+      </Text>
+    </View>
   }
-}
+})
 
-const styles = StyleSheet.create({
+// Style the React Component
+var styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+    flex: 1, // fill screen as much as possible, someting like width: 100%; height: 100%;
+    // flexDirection: 'row', // swaps justifyContent to be width, alignItems to height
+    // Weird way to center X/Y
+    justifyContent: 'center', // move on Y axis (height)
+    // justifyContent: 'flex-end', // bottom of height
+    alignItems: 'center' // move on X axis (width)
+    // alignItems: 'flex-end' // right of width
+  }
+})
 
-AppRegistry.registerComponent('weekdays', () => weekdays);
+// Show the react Component on the screen
+AppRegistry.registerComponent('weekdays', function() {
+  return Weekdays
+})
