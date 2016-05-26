@@ -14,7 +14,7 @@ class Weekdays extends React.Component{
     for (let i=0; i<7; i++){
       let day = Moment().add(i, 'days').format('dddd')
       days.push(
-        <DayItem key={i} day={day} daysUntil={i} />
+        <DayItem key={i} day={day} daysUntil={i+1} />
       )
     }
     return days
